@@ -121,7 +121,7 @@ Supported list: %s" lang (mapconcat #'car gt-deepl-langs-mapping ", "))))
   (with-slots (key) engine
     (unless (stringp key)
       (if-let (auth-key (gt-lookup-password
-                         :user (if key (format "%s" key) "auth-key")
+                         :user (if key (format "%s" key) "apikey")
                          :host "api.deepl.com"))
           (setf key auth-key)
         (user-error "You should provide a auth-key for gt-deepl-engine")))))
